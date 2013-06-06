@@ -23,7 +23,12 @@
     {% if article.cacause_comment %}
     {% for comment in article.cacause_comment %}
         <hr>
-        <p>From: {{ comment.author }}</p>
+        {% if CACAUSE_GRAVATAR and comment.gravatar %}
+        <img src="{{ comment.gravatar }}" height="32" width="32"
+        style="float:left; margin-right:10px"/>
+        {% endif %}
+        <b>{{ comment.author }}</b><br/>
+        Posted on {{ comment.date }}<br/>
         {{ comment.body }}
     {% endfor %}
     {% endif %}

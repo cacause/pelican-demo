@@ -10,6 +10,7 @@ from within your theme's templates.
 import sys
 import os
 import hashlib
+import six
 from pelican import signals
 from pelican import readers
 
@@ -74,9 +75,16 @@ def enhance_article(sender):
     if article_id in cacause_context['comments']:
         posts = []
         for post in cacause_context['comments'][article_id]:
+            # convert Markup to HTML
             filename = post['comment']
             body = read_comment(filename, False)
             post['body'] = body
+            # add Gravatar image
+            email = post['email']
+            email_bytes = six.b(email).lower()
+            gravatar_url = "http://www.gravatar.com/avatar/%s" % \
+                hashlib.md5(email_bytes).hexdigest()
+            post['gravatar'] = gravatar_url
             posts.append(post)
         # DEBUG
         print "Related comments: %d" % len(posts)

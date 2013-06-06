@@ -22,6 +22,8 @@ DEFAULT_PAGINATION = 5
 PLUGIN_PATH = "plugins"
 PLUGINS = ['cacause',]
 
+# Configure CaCause plugin
 CACAUSE_DIR = "comments"
+CACAUSE_GRAVATAR = True
 
 THEME = 'themes/simple'
