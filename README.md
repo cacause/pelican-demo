@@ -22,7 +22,7 @@ Pelican is the first piece to achieve our goal.
 
 A sub-directory is dedicated to store comments. Each comment is a file in REST 
 or Markdown format (.rst or .md file extension). The header is used to define
-comment metadata: author name, author email, published date.
+comment metadata: author name, author email, web site, published date.
 
 Customize Pelican blog configuration defined in *pelicanconf.py*
 
