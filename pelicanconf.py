@@ -3,7 +3,7 @@
 
 AUTHOR = u"Pelican Contributors"
 SITENAME = u"Pelican Development Blog"
-SITEURL = 'http://localhost:8000'
+SITEURL = 'http://localhost:8080'
 
 TIMEZONE = 'Europe/Paris'
 
